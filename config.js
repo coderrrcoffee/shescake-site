@@ -89,7 +89,7 @@ window.SITE_CONFIG = {
     stats: [
       { value: "2", label: "кофейни в Мытищах" },
       { value: "0 ₽", label: "самовывоз" },
-      { value: "9–21", label: "каждый день" }
+      { value: "9–20", label: "каждый день" }
     ]
   },
 
