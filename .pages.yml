@@ -1,0 +1,88 @@
+media:
+  - name: photos
+    label: Фото десертов
+    input: assets/photos
+    output: assets/photos
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+content:
+  - name: catalog
+    label: Витрина
+    type: file
+    path: data/catalog.json
+    fields:
+      - name: products
+        label: Десерты
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: Код карточки (не менять)
+            type: string
+            required: true
+          - name: name
+            label: Название
+            type: string
+            required: true
+          - name: desc
+            label: Описание
+            type: text
+          - name: price
+            label: Цена, ₽
+            type: number
+            required: true
+          - name: weight
+            label: Вес, граммы
+            type: number
+          - name: weightLabel
+            label: Вес на карточке
+            type: string
+          - name: unit
+            label: Единица
+            type: select
+            required: true
+            options:
+              values:
+                - name: шт
+                  label: шт
+                - name: набор
+                  label: набор
+          - name: category
+            label: Категория
+            type: select
+            required: true
+            options:
+              values:
+                - name: bento
+                  label: Бенто
+                - name: cakes
+                  label: Торты
+                - name: cupcakes
+                  label: Капкейки
+                - name: hearts
+                  label: Сердца
+          - name: image
+            label: Фото
+            type: image
+            required: true
+            options:
+              media: photos
+              path: assets/photos
+              extensions: [jpg, jpeg, png, webp]
+          - name: badge
+            label: Плашка (необязательно)
+            type: string
+          - name: badgeTone
+            label: Цвет плашки
+            type: select
+            options:
+              values:
+                - name: accent
+                  label: Оранжевый
+                - name: green
+                  label: Олива
+          - name: available
+            label: Показывать на сайте
+            type: boolean
+            default: true
